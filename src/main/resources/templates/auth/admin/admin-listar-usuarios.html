@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/frag-head :: head"></head>
+<body>
+  <div th:replace="auth/auth-generica-nav :: navGenerica"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Lista de Usuários</h2>
+
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Nascimento</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Situação</th>
+                        <th scope="col">Papel</th>
+                        <th scope="col">Acão</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                
+                      <tr th:if="${usuarios.empty}">
+                        <td colspan="2">Sem usuários</td>
+                      </tr>
+                      <tr th:each="usuario : ${usuarios}">
+                        <td><span th:text="${usuario.nome}">Nome</span></td>
+                        <td><span th:text="${usuario.cpf}">Cpf</span></td>
+                        <td><span th:text="${#dates.format(usuario.dataNascimento, 'dd/MM/yyyy')}">Nascimento</span></td>
+                        <td><span th:text="${usuario.email}">E-mail</span></td>
+                        <td>
+                          <span th:text="${usuario.ativo} ? 'ATIVO' : 'INATIVO'">Ativo?</span>
+                        </td>
+                        <td>
+                          <th:block th:each="pp : ${usuario.papeis}">
+                            <span th:text="${pp.papel}">Papel</span></td>
+                          </th:block>
+                        <td>
+                            <a th:href="@{/usuario/editar/{id}(id=${usuario.id})}"><i class="fa-solid fa-user-pen"></i></a>
+
+                            <a th:href="@{/usuario/admin/apagar/{id}(id=${usuario.id})}"
+                              th:data-confirm-delete="|Você deseja apagar: ${usuario.nome}?|"
+                              onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"><i class="fa-solid fa-trash"></i></a>
+                            
+                              <a th:href="@{/usuario/editarPapel/{id}(id=${usuario.id})}"><i class="fa-solid fa-users-gear"></i></a>
+                        </td>       
+                      </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/frag-head :: head"></head>
+
+<body>
+    <nav th:replace="auth/auth-generica-nav :: navGenerica"></nav>
+    <div class="container">
+        <h2>Olá, Bibliotecario!</h2>
+        <hr class="divider">
+        <div class="row">
+
+            <!--CARD 1-->
+            <div class="col-sm">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/41TsvI70n9L._SY344_BO1,204,203,200_QL70_ML2_.jpg"
+                                class="img-fluid rounded-start" alt="...">
+                            <button type="button" class="btn btn-info" style="width: 100%;">Comprar</button>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Do Mil ao Milhão</h5>
+                                <p class="card-text">Em seu primeiro livro, Thiago Nigro, criador da plataforma
+                                    O Primo Rico, ensina aos
+                                    leitores...</p>
+                                <p class="card-text"><small class="text-muted">Data da publicação:
+                                        10/11/2018</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD 2-->
+            <div class="col-sm">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://m.media-amazon.com/images/I/41Eg0oxmKqL._SY346_.jpg"
+                                    class="img-fluid rounded-start" alt="...">
+                                <button type="button" class="btn btn-info" style="width: 100%;">Comprar</button>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">35 Técnicas e Curiosidades Mentais</h5>
+                                    <p class="card-text">Talvez você não saiba, mas o cérebro humano é muito
+                                        mais curioso e incrível...</p>
+                                    <p class="card-text"><small class="text-muted">Data da publicação:
+                                            10/11/2020</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <!--CARD 3-->
+            <div class="col-sm">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://m.media-amazon.com/images/I/413pIcjQZ0L._SY346_.jpg"
+                                    class="img-fluid rounded-start" alt="...">
+                                <button type="button" class="btn btn-info" style="width: 100%;">Comprar</button>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">O Segredo do Carisma</h5>
+                                    <p class="card-text">Cansou de se sentir uma pessoa socialmente "apagada"? Ser uma pessoa carismática pode parecer...</p>
+                                    <p class="card-text"><small class="text-muted">Data da publicação:
+                                            10/11/2022</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
